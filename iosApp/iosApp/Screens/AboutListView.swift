@@ -2,7 +2,7 @@
 //  AboutListView.swift
 //  iosApp
 //
-//  Created by Vengatesh on 06/03/24.
+//  Created by Vengatesh on 07/03/24.
 //  Copyright © 2024 orgName. All rights reserved.
 //
 
@@ -51,3 +51,4 @@ struct AboutListView : View {
 #Preview {
     AboutListView()
 }
+
