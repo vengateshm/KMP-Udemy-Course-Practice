@@ -49,6 +49,9 @@ dependencies {
     implementation(libs.coil.compose)
     debugImplementation(libs.compose.ui.tooling)
 
+    //Datastore preferences
+    implementation(libs.androidx.datastore.preferences.core)
+
     implementation(libs.accompanist.swiperefresh)
 
     implementation(libs.koin.androidx.compose)

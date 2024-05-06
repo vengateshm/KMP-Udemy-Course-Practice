@@ -43,6 +43,10 @@ kotlin {
 
             //SqlDelight
 //            implementation(libs.sql.coroutine.extensions)
+
+            //Datastore preferences
+            //implementation(libs.androidx.datastore.preferences)
+            implementation(libs.androidx.datastore.preferences.core)
         }
 
         androidMain.dependencies {
@@ -53,6 +57,9 @@ kotlin {
 
             //SqlDelight
             implementation(libs.sql.android.driver)
+
+            //Datastore preferences
+            implementation(libs.androidx.datastore.preferences.core)
         }
 
         iosMain.dependencies {

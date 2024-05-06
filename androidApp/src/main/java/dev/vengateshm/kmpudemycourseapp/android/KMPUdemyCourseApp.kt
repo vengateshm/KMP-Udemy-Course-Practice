@@ -1,6 +1,7 @@
 package dev.vengateshm.kmpudemycourseapp.android
 
 import android.app.Application
+import dev.vengateshm.kmpudemycourseapp.android.di.dataStoreModule
 import dev.vengateshm.kmpudemycourseapp.android.di.databaseModule
 import dev.vengateshm.kmpudemycourseapp.android.di.viewModelsModule
 import dev.vengateshm.kmpudemycourseapp.di.sharedKoinModules
@@ -15,7 +16,7 @@ class KMPUdemyCourseApp : Application() {
     }
 
     private fun initKoin() {
-        val modules = viewModelsModule + databaseModule + sharedKoinModules
+        val modules = viewModelsModule + databaseModule + dataStoreModule + sharedKoinModules
         startKoin {
             androidContext(this@KMPUdemyCourseApp)
             modules(modules)

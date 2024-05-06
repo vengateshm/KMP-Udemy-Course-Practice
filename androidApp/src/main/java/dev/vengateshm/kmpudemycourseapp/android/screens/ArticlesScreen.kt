@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -27,6 +28,7 @@ import dev.vengateshm.kmpudemycourseapp.android.custom_composables.ErrorMessage
 import dev.vengateshm.kmpudemycourseapp.android.custom_composables.MainAppBar
 import dev.vengateshm.kmpudemycourseapp.articles.domain.Article
 import dev.vengateshm.kmpudemycourseapp.articles.presentation.ArticlesViewModel
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -38,10 +40,17 @@ fun ArticlesScreen(
 
     val articlesState by articlesViewModel.articlesState.collectAsState()
 
+    val scope = rememberCoroutineScope()
+
     Column {
         MainAppBar(
             onAboutButtonClick = onAboutButtonClick,
-            onSourceButtonClick = onSourceButtonClick
+            onSourceButtonClick = onSourceButtonClick,
+            onCheck = {
+                scope.launch {
+                    articlesViewModel.appDatastore().setIsDarkTheme(it)
+                }
+            }
         )
 
         if (articlesState.loading)

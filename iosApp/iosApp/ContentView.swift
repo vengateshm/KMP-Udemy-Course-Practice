@@ -12,7 +12,8 @@ import SwiftUI
 struct ContentView: View {
 
     @State private var shouldOpenAbout = false
-    
+    @State private var isDarkTheme = false
+        
     var body: some View {
         let articlesScreen = ArticlesScreen(viewModel: .init())
         
@@ -29,9 +30,27 @@ struct ContentView: View {
                             AboutScreen()
                         }
                     }
+                    ToolbarItem {
+                        Button {
+                            articlesScreen.viewModel.articlesViewModel.setIsDarkTheme(value: !isDarkTheme)
+                        } label: {
+                            if isDarkTheme {
+                                Label("Light", systemImage: "sun.max")
+                            } else {
+                                Label("Dark", systemImage: "moon.circle")
+                            }
+                        }
+                    }
                 }
         }.refreshable {
             articlesScreen.viewModel.articlesViewModel.getArticles(forceFetch: true)
+        }.onAppear {
+            Task {
+                for await themeValue in articlesScreen.viewModel.articlesViewModel.appDatastore().isDarkTheme() {
+                    self.isDarkTheme = themeValue.boolValue
+                    print(themeValue.boolValue)
+                }
+            }
         }
     }
 }

@@ -22,7 +22,7 @@ class ArticlesUseCase(private val articleRepository: ArticleRepository) {
         )
 
         return when {
-            abs(days) > 1 -> "${abs(days)}days ago"
+            abs(days) > 1 -> "${abs(days)} days ago"
             abs(days) == 1 -> "Yesterday"
             else -> "Today"
         }
