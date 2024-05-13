@@ -60,6 +60,10 @@ kotlin {
 
             //Datastore preferences
             implementation(libs.androidx.datastore.preferences.core)
+
+            implementation(libs.androidx.startup.runtime)
+
+            implementation(libs.androidx.browser)
         }
 
         iosMain.dependencies {
