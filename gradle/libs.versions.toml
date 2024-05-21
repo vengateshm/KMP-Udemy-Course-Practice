@@ -19,6 +19,10 @@ startupRuntime = "1.1.1"
 touchlabSkie = "0.6.4"
 kotlinSerialization = "1.9.23"
 swiperefresh = "0.35.0-alpha"
+room = "2.7.0-alpha02"
+ksp = "1.9.23-1.0.19"
+sqlite = "2.5.0-alpha02"
+atomicfu = "0.23.1"
 
 [libraries]
 androidx-browser = { module = "androidx.browser:browser", version.ref = "browser" }
@@ -52,6 +56,13 @@ sql-android-driver = { module = "app.cash.sqldelight:android-driver", version.re
 
 accompanist-swiperefresh = { module = "com.google.accompanist:accompanist-swiperefresh", version.ref = "swiperefresh" }
 
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-runtime-android = { module = "androidx.room:room-runtime-android", version.ref = "room" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
+
+kotlinx-atomicfu = { module = "org.jetbrains.kotlinx:atomicfu", version.ref = "atomicfu" }
+
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
@@ -60,3 +71,5 @@ kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref =
 touchlabSkie = { id = "co.touchlab.skie", version.ref = "touchlabSkie" }
 kotlinSerialization = { id = "plugin.serialization", version.ref = "kotlinSerialization" }
 sqlDelight = { id = "app.cash.sqldelight", version.ref = "sqlDelight" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+room = { id = "androidx.room", version.ref = "room" }

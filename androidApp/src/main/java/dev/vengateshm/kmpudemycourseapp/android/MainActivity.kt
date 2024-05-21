@@ -9,12 +9,17 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import dev.vengateshm.kmpudemycourseapp.android.room_db.TodoListScreen
 import dev.vengateshm.kmpudemycourseapp.datastore.AppDatastore
+import dev.vengateshm.kmpudemycourseapp.db.getDatabaseBuilder
+import dev.vengateshm.kmpudemycourseapp.room_db.TodoDao
+import dev.vengateshm.kmpudemycourseapp.room_db.getAppRoomDatabase
 import org.koin.android.ext.android.inject
 
 class MainActivity : ComponentActivity() {
 
-    val appDatastore: AppDatastore by inject()
+    private val appDatastore: AppDatastore by inject()
+    private val todoDao: TodoDao by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +38,8 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
 //                    AppScaffold(articlesViewModel = null)
-                    BrowserSample()
+//                    BrowserSample()
+                    TodoListScreen(todoDao = todoDao)
                 }
             }
         }

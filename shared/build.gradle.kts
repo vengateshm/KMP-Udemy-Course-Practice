@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.touchlabSkie)
     kotlin("plugin.serialization") version "1.9.23"
     alias(libs.plugins.sqlDelight)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.room)
 }
 
 kotlin {
@@ -47,6 +49,12 @@ kotlin {
             //Datastore preferences
             //implementation(libs.androidx.datastore.preferences)
             implementation(libs.androidx.datastore.preferences.core)
+
+            //Room
+            implementation(libs.room.runtime)
+            implementation(libs.sqlite.bundled)
+
+            implementation(libs.kotlinx.atomicfu)
         }
 
         androidMain.dependencies {
@@ -71,6 +79,7 @@ kotlin {
             implementation(libs.ktor.client.darwin)
 
             implementation("co.touchlab:stately-common:2.0.6")
+
             //SqlDelight
             implementation(libs.sql.native.driver)
         }
@@ -99,4 +108,12 @@ sqldelight {
             packageName.set("dev.vengateshm.newsapp.db")
         }
     }
+}
+
+room {
+    schemaDirectory("$projectDir/schemas")
+}
+
+dependencies {
+    ksp(libs.room.compiler)
 }

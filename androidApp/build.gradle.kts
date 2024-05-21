@@ -56,4 +56,8 @@ dependencies {
 
     implementation(libs.koin.androidx.compose)
     implementation(libs.koin.android)
+
+    //Room
+    implementation(libs.room.runtime)
+    implementation(libs.room.runtime.android)
 }
