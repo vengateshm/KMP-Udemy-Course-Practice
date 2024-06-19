@@ -16,6 +16,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "KMPUdemyCourseApp"
+rootProject.name = "KotlinMultiplatformSamples"
 include(":androidApp")
 include(":shared")

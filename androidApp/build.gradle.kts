@@ -4,10 +4,10 @@ plugins {
 }
 
 android {
-    namespace = "dev.vengateshm.kmpudemycourseapp.android"
+    namespace = "dev.vengateshm.kotlin_multiplatform_samples.android"
     compileSdk = 34
     defaultConfig {
-        applicationId = "dev.vengateshm.kmpudemycourseapp.android"
+        applicationId = "dev.vengateshm.kotlin_multiplatform_samples.android"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -56,4 +56,7 @@ dependencies {
 
     implementation(libs.koin.androidx.compose)
     implementation(libs.koin.android)
+
+    //Timber
+    implementation(libs.timber)
 }

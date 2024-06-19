@@ -64,13 +64,16 @@ kotlin {
             implementation(libs.androidx.startup.runtime)
 
             implementation(libs.androidx.browser)
+
+            //Timber
+            implementation(libs.timber)
         }
 
         iosMain.dependencies {
             //Ktor
             implementation(libs.ktor.client.darwin)
 
-            implementation("co.touchlab:stately-common:2.0.6")
+            implementation(libs.stately.common)
             //SqlDelight
             implementation(libs.sql.native.driver)
         }

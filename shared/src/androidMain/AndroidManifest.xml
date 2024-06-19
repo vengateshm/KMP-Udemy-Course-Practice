@@ -9,7 +9,7 @@
             android:exported="false"
             tools:node="merge">
 
-            <meta-data  android:name="dev.vengateshm.kmpudemycourseapp.AppContextInitializer"
+            <meta-data  android:name="dev.vengateshm.kotlin_multiplatform_samples.AppContextInitializer"
                 android:value="androidx.startup" />
         </provider>
     </application>
